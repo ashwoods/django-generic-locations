@@ -1,0 +1,10 @@
+*~
+*.pyc
+*.swp
+.code_swarm
+.coverage
+.idea
+build
+src
+dist
+*.egg

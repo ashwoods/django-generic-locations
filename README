@@ -1,0 +1,47 @@
+Django Generic Location
+=======================
+
+A address/location addon implemented with the django contenttype framework and 
+geodjango.
+
+Thus allows you to make any model "location" aware without having to modify 
+the original models in any way.
+
+It uses the geodjango PointField, so for the moment it depends on PostGIS.
+
+It also includes a neat PointField widget for the django admin, 
+that uses google maps for geoencoding the address and displaying the location
+on a map.
+
+Installation
+============
+
+Install and add to INSTALLED_APPS in your settings.py file:
+
+    INSTALLED_APPS = (
+    ...
+    'generic_locations',
+    )
+
+Run syncdb and collectstatic.
+
+Usage
+=====
+
+To be able to add location information to your model, just import and add the Locationinline:
+
+
+    class FooAdmin(admin.ModelAdmin):
+        ...
+        ...
+        inlines = [
+          LocationInline,
+        ]
+
+
+    admin.site.register(Foo, FooAdmin)
+
+#TODO: using Location in your views
+
+Note: currently the javascript is made to work with django-grappelli.
+Code is still alpha :)
