@@ -93,7 +93,8 @@ $(document).ready(function() {
         AddressLookup(map,geocode,country);
 
     });
-});
+})(JQuery);
+
 
 
 
