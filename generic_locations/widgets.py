@@ -11,7 +11,7 @@ class GoogleMapsPointWidget(MultiWidget):
 
     def decompress(self, value):
         if value:
-            print type(value)
+            print value
             return ["%.18f" % value.x, "%.18f" % value.y]
         else:
             return [0,0]

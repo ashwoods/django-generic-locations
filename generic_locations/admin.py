@@ -9,6 +9,7 @@ class GenericLocationForm(ModelForm):
     class Meta:
         model = GenericLocation
         fields = ('address',
+                  'address_extra',
                   'city',
                   'state_or_province',
                   'country',
@@ -25,10 +26,12 @@ class LocationInline(generic.GenericStackedInline):
     form  = GenericLocationForm
     extra = 1
     max_num=1
+    classes = ('collapse open',)
 
     class Media:
         js = [
-            settings.STATIC_URL + '/js/jquery-1.5.2.min.js',
             'http://maps.google.com/maps/api/js?sensor=false',
-            settings.STATIC_URL +'/js/jq.djadmin-location.js'
+            settings.STATIC_URL + '/js/jquery.livequery.min.js',
+            settings.STATIC_URL +'/js/jq.generic.location.admin.js',
+
        ]
