@@ -74,7 +74,7 @@
         }
 
 
-        $('#zoom').click(function(){
+        $('.collapse-handler').click(function(){
             resizeMap(map, latlng)
             map.setZoom(15)
         });
